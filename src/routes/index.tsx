@@ -190,14 +190,14 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+    <section id="about" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-2 gap-20">
           <div className="space-y-6">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
               What KAFOU means
             </p>
-            <h2 className="text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl">
+            <h2 className="text-6xl font-bold uppercase leading-tight tracking-tight">
               Well done.
               <br />
               Capable.
@@ -221,7 +221,7 @@ function About() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-3 gap-5">
           {values.map((value) => (
             <div
               key={value}
@@ -258,13 +258,13 @@ const events = [
 
 function Events() {
   return (
-    <section id="events" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="events" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Coming up
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Upcoming Events
           </h2>
         </div>
@@ -273,9 +273,9 @@ function Events() {
           {events.map((event) => (
             <div
               key={event.title}
-              className="flex flex-col gap-6 rounded-md border border-border bg-card/40 p-6 transition-colors hover:border-primary/40 hover:bg-card/60 md:flex-row md:items-center md:justify-between"
+              className="flex flex-row items-center justify-between gap-8 rounded-md border border-border bg-card/40 p-7 transition-colors hover:border-primary/40 hover:bg-card/60"
             >
-              <div className="flex items-start gap-6 md:items-center">
+              <div className="flex items-center gap-8">
                 <div className="min-w-[4.5rem] text-center">
                   <p className="text-2xl font-bold leading-none text-primary">
                     {event.date.split(" ")[0]}
@@ -293,7 +293,7 @@ function Events() {
               </div>
               <a
                 href="#newsletter"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button md:self-auto"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button shrink-0"
               >
                 Anmeldung
               </a>
@@ -317,13 +317,13 @@ const artists = [
 
 function Artists() {
   return (
-    <section id="workshops" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="workshops" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Collective artists
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Artists & Workshops
           </h2>
           <p className="max-w-2xl text-muted-foreground">
@@ -332,7 +332,7 @@ function Artists() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-3 gap-5">
           {artists.map((artist) => (
             <div
               key={artist.name}
@@ -374,13 +374,13 @@ const archiveItems = [
 
 function Archive() {
   return (
-    <section id="archive" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="archive" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Past happenings
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Archive
           </h2>
           <p className="max-w-2xl text-muted-foreground">
@@ -389,7 +389,7 @@ function Archive() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-3 gap-5">
           {archiveItems.map((item) => (
             <div
               key={item.label}
@@ -416,13 +416,13 @@ function Newsletter() {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="newsletter" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
+    <section id="newsletter" className="relative px-10 py-32">
+      <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
         <div className="mb-8 space-y-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Stay connected
           </p>
-          <h2 className="text-3xl font-bold uppercase tracking-tight sm:text-4xl">
+          <h2 className="text-4xl font-bold uppercase tracking-tight">
             Join the collective
           </h2>
           <p className="text-muted-foreground">
@@ -432,7 +432,7 @@ function Newsletter() {
         </div>
 
         <form
-          className="flex flex-col gap-3 sm:flex-row"
+          className="flex flex-row gap-3"
           onSubmit={(e) => {
             e.preventDefault();
             alert(`Thanks for signing up with ${email}`);
@@ -461,15 +461,18 @@ function Newsletter() {
 
 function Footer() {
   return (
-    <footer className="relative border-t border-border px-6 py-16">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid gap-12 md:grid-cols-2">
+    <footer className="relative border-t border-border px-10 py-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-2 gap-16">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold uppercase tracking-tight text-glow-sm">
-              KAFOU
-              <br />
-              COLECTIVO
-            </h2>
+            <div className="flex items-baseline gap-4">
+              <span className="font-arabic ink-mark text-6xl leading-none text-foreground" lang="ar" dir="rtl">
+                كفو
+              </span>
+              <span className="stencil-stamp text-sm tracking-[0.4em] text-muted-foreground">
+                Collectivo
+              </span>
+            </div>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>
                 <span className="text-foreground">Instagram:</span>{" "}
@@ -494,7 +497,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 md:items-end md:text-right">
+          <div className="flex flex-col items-end gap-6 text-right">
             <div className="flex flex-wrap gap-3">
               {["Instagram", "YouTube", "SoundCloud", "Bandcamp"].map(
                 (social) => (
@@ -509,7 +512,7 @@ function Footer() {
               )}
             </div>
 
-            <div className="flex items-center gap-4 md:flex-row-reverse">
+            <div className="flex flex-row-reverse items-center gap-4">
               <div className="flex h-24 w-24 items-center justify-center rounded-md border border-dashed border-primary/40 bg-card/40 text-xs text-muted-foreground">
                 QR
               </div>
@@ -521,8 +524,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} KAFOU COLECTIVO. All rights reserved.</p>
+        <div className="mt-16 flex flex-row items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} KAFOU COLLECTIVO. All rights reserved.</p>
           <p className="uppercase tracking-wider">Uplift without hesitation</p>
         </div>
       </div>
