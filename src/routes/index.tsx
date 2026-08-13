@@ -251,7 +251,7 @@ const events = [
   },
   {
     date: "21 SEP",
-    title: "Colectivo Gathering: Art + Music",
+    title: "Collectivo Gathering: Art + Music",
     location: "Online",
   },
 ];
@@ -368,7 +368,7 @@ const archiveItems = [
   { label: "Cinema Under the Bridge", year: "2024" },
   { label: "Zine & Beat Swap", year: "2024" },
   { label: "Open Studio Sessions", year: "2023" },
-  { label: "Colectivo Radio 001", year: "2023" },
+  { label: "Collectivo Radio 001", year: "2023" },
   { label: "Group Exhibition: Roots", year: "2023" },
 ];
 
