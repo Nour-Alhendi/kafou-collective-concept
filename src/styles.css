@@ -23,6 +23,7 @@
   --font-display: "Space Grotesk", "Reem Kufi", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-arabic: "Reem Kufi", sans-serif;
+  --font-stencil: "Saira Stencil One", "Stardos Stencil", sans-serif;
 
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -112,6 +113,34 @@
 
 @utility mask-fade-bottom {
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Spray-paint stencil lockup: rough, stamped edges */
+@utility stencil-stamp {
+  font-family: var(--font-stencil);
+  text-transform: uppercase;
+  color: var(--foreground);
+  text-shadow:
+    0.5px 0 0 color-mix(in oklab, var(--kafou-pink) 45%, transparent),
+    -0.5px 0.5px 0 color-mix(in oklab, var(--background) 70%, transparent),
+    0 0 6px color-mix(in oklab, var(--kafou-pink) 25%, transparent);
+  mask-image:
+    repeating-linear-gradient(
+      88deg,
+      black 0 18px,
+      color-mix(in oklab, black 25%, transparent) 18px 22px,
+      black 22px 46px,
+      color-mix(in oklab, black 35%, transparent) 46px 49px
+    );
+  filter: contrast(1.1);
+}
+
+/* Arabic mark: hand-inked, slightly blotted */
+@utility ink-mark {
+  text-shadow:
+    0 0 60px color-mix(in oklab, var(--kafou-pink) 55%, transparent),
+    0 0 120px color-mix(in oklab, var(--kafou-pink) 35%, transparent),
+    2px 3px 0 color-mix(in oklab, var(--kafou-ink) 60%, transparent);
 }
 
 @layer base {

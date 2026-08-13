@@ -32,6 +32,7 @@ function Index() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <SmokeLayer />
+      <TopNav />
       <Hero />
       <About />
       <Events />
@@ -63,9 +64,51 @@ function SmokeLayer() {
   );
 }
 
+const navLinks = [
+  { label: "About", href: "#about" },
+  { label: "Events", href: "#events" },
+  { label: "Artists & Workshops", href: "#workshops" },
+  { label: "Archive", href: "#archive" },
+];
+
+function TopNav() {
+  return (
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
+      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-10">
+        <a href="#top" className="flex items-baseline gap-3">
+          <span className="font-arabic text-3xl leading-none text-foreground" lang="ar" dir="rtl">
+            كفو
+          </span>
+          <span className="stencil-stamp text-xs tracking-[0.35em] text-muted-foreground">
+            Collectivo
+          </span>
+        </a>
+
+        <nav className="flex items-center gap-10">
+          {navLinks.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground transition-colors hover:text-primary"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#newsletter"
+            className="rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:bg-primary/90 glow-button"
+          >
+            Join
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
+
 function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+    <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
       <div className="absolute inset-0 -z-10 mask-fade-bottom opacity-30">
         <div
           className="absolute inset-0"
@@ -76,31 +119,31 @@ function Hero() {
         />
       </div>
 
-      <div className="max-w-5xl space-y-8">
-        <div className="space-y-2">
-          <p
-            className="font-arabic text-3xl font-semibold text-primary/80 md:text-4xl"
-            aria-label="Kafou in Arabic"
+      <div className="max-w-6xl space-y-10">
+        <h1 className="flex flex-col items-center">
+          <span
+            className="font-arabic ink-mark block text-[10rem] font-bold leading-[0.85] text-foreground lg:text-[14rem]"
+            lang="ar"
+            dir="rtl"
           >
             كفو
-          </p>
-          <h1 className="text-6xl font-bold uppercase leading-[0.9] tracking-tight text-glow sm:text-7xl md:text-8xl lg:text-9xl">
-            KAFOU
-            <br />
-            COLECTIVO
-          </h1>
-        </div>
+          </span>
+          <span className="stencil-stamp mt-2 block text-2xl tracking-[0.5em] lg:text-4xl">
+            Collectivo
+          </span>
+          <span className="sr-only">Kafou Collectivo</span>
+        </h1>
 
-        <p className="mx-auto max-w-2xl text-lg font-medium uppercase tracking-wide text-primary sm:text-xl md:text-2xl">
+        <p className="mx-auto max-w-3xl text-2xl font-medium uppercase tracking-[0.2em] text-primary">
           Uplift without hesitation
         </p>
 
-        <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
           A representative bridge between art, music, and cinema. A space for
           artists and musicians to be seen, supported, and connected.
         </p>
 
-        <div className="flex flex-col items-center gap-4 pt-4 sm:flex-row sm:justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
             href="#events"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
@@ -147,14 +190,14 @@ function About() {
   ];
 
   return (
-    <section id="about" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
+    <section id="about" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-2 gap-20">
           <div className="space-y-6">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
               What KAFOU means
             </p>
-            <h2 className="text-4xl font-bold uppercase leading-tight tracking-tight sm:text-5xl">
+            <h2 className="text-6xl font-bold uppercase leading-tight tracking-tight">
               Well done.
               <br />
               Capable.
@@ -178,7 +221,7 @@ function About() {
           </div>
         </div>
 
-        <div className="mt-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-20 grid grid-cols-3 gap-5">
           {values.map((value) => (
             <div
               key={value}
@@ -208,20 +251,20 @@ const events = [
   },
   {
     date: "21 SEP",
-    title: "Colectivo Gathering: Art + Music",
+    title: "Collectivo Gathering: Art + Music",
     location: "Online",
   },
 ];
 
 function Events() {
   return (
-    <section id="events" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="events" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Coming up
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Upcoming Events
           </h2>
         </div>
@@ -230,9 +273,9 @@ function Events() {
           {events.map((event) => (
             <div
               key={event.title}
-              className="flex flex-col gap-6 rounded-md border border-border bg-card/40 p-6 transition-colors hover:border-primary/40 hover:bg-card/60 md:flex-row md:items-center md:justify-between"
+              className="flex flex-row items-center justify-between gap-8 rounded-md border border-border bg-card/40 p-7 transition-colors hover:border-primary/40 hover:bg-card/60"
             >
-              <div className="flex items-start gap-6 md:items-center">
+              <div className="flex items-center gap-8">
                 <div className="min-w-[4.5rem] text-center">
                   <p className="text-2xl font-bold leading-none text-primary">
                     {event.date.split(" ")[0]}
@@ -250,7 +293,7 @@ function Events() {
               </div>
               <a
                 href="#newsletter"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button md:self-auto"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button shrink-0"
               >
                 Anmeldung
               </a>
@@ -274,13 +317,13 @@ const artists = [
 
 function Artists() {
   return (
-    <section id="workshops" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="workshops" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Collective artists
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Artists & Workshops
           </h2>
           <p className="max-w-2xl text-muted-foreground">
@@ -289,7 +332,7 @@ function Artists() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-3 gap-5">
           {artists.map((artist) => (
             <div
               key={artist.name}
@@ -325,19 +368,19 @@ const archiveItems = [
   { label: "Cinema Under the Bridge", year: "2024" },
   { label: "Zine & Beat Swap", year: "2024" },
   { label: "Open Studio Sessions", year: "2023" },
-  { label: "Colectivo Radio 001", year: "2023" },
+  { label: "Collectivo Radio 001", year: "2023" },
   { label: "Group Exhibition: Roots", year: "2023" },
 ];
 
 function Archive() {
   return (
-    <section id="archive" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-5xl">
+    <section id="archive" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-12 space-y-4">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Past happenings
           </p>
-          <h2 className="text-4xl font-bold uppercase tracking-tight sm:text-5xl">
+          <h2 className="text-5xl font-bold uppercase tracking-tight">
             Archive
           </h2>
           <p className="max-w-2xl text-muted-foreground">
@@ -346,7 +389,7 @@ function Archive() {
           </p>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid grid-cols-3 gap-5">
           {archiveItems.map((item) => (
             <div
               key={item.label}
@@ -373,13 +416,13 @@ function Newsletter() {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="newsletter" className="relative px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-3xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
+    <section id="newsletter" className="relative px-10 py-32">
+      <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
         <div className="mb-8 space-y-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
             Stay connected
           </p>
-          <h2 className="text-3xl font-bold uppercase tracking-tight sm:text-4xl">
+          <h2 className="text-4xl font-bold uppercase tracking-tight">
             Join the collective
           </h2>
           <p className="text-muted-foreground">
@@ -389,7 +432,7 @@ function Newsletter() {
         </div>
 
         <form
-          className="flex flex-col gap-3 sm:flex-row"
+          className="flex flex-row gap-3"
           onSubmit={(e) => {
             e.preventDefault();
             alert(`Thanks for signing up with ${email}`);
@@ -418,15 +461,18 @@ function Newsletter() {
 
 function Footer() {
   return (
-    <footer className="relative border-t border-border px-6 py-16">
-      <div className="mx-auto max-w-5xl">
-        <div className="grid gap-12 md:grid-cols-2">
+    <footer className="relative border-t border-border px-10 py-16">
+      <div className="mx-auto max-w-7xl">
+        <div className="grid grid-cols-2 gap-16">
           <div className="space-y-6">
-            <h2 className="text-3xl font-bold uppercase tracking-tight text-glow-sm">
-              KAFOU
-              <br />
-              COLECTIVO
-            </h2>
+            <div className="flex items-baseline gap-4">
+              <span className="font-arabic ink-mark text-6xl leading-none text-foreground" lang="ar" dir="rtl">
+                كفو
+              </span>
+              <span className="stencil-stamp text-sm tracking-[0.4em] text-muted-foreground">
+                Collectivo
+              </span>
+            </div>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>
                 <span className="text-foreground">Instagram:</span>{" "}
@@ -451,7 +497,7 @@ function Footer() {
             </div>
           </div>
 
-          <div className="flex flex-col gap-6 md:items-end md:text-right">
+          <div className="flex flex-col items-end gap-6 text-right">
             <div className="flex flex-wrap gap-3">
               {["Instagram", "YouTube", "SoundCloud", "Bandcamp"].map(
                 (social) => (
@@ -466,7 +512,7 @@ function Footer() {
               )}
             </div>
 
-            <div className="flex items-center gap-4 md:flex-row-reverse">
+            <div className="flex flex-row-reverse items-center gap-4">
               <div className="flex h-24 w-24 items-center justify-center rounded-md border border-dashed border-primary/40 bg-card/40 text-xs text-muted-foreground">
                 QR
               </div>
@@ -478,8 +524,8 @@ function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground md:flex-row">
-          <p>© {new Date().getFullYear()} KAFOU COLECTIVO. All rights reserved.</p>
+        <div className="mt-16 flex flex-row items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground">
+          <p>© {new Date().getFullYear()} KAFOU COLLECTIVO. All rights reserved.</p>
           <p className="uppercase tracking-wider">Uplift without hesitation</p>
         </div>
       </div>
