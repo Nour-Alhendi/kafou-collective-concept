@@ -106,26 +106,6 @@ function TopNav() {
   );
 }
 
-function SmokeLayerUnused() {
-  return (
-    <div className="pointer-events-none fixed inset-0 -z-10">
-      <div className="absolute inset-0 bg-smoke" />
-      <div
-        className="absolute -left-1/4 top-0 h-[60vh] w-[60vw] rounded-full opacity-20 blur-[120px]"
-        style={{ background: "var(--kafou-pink)" }}
-      />
-      <div
-        className="absolute bottom-[10%] right-[-10%] h-[50vh] w-[50vw] rounded-full opacity-15 blur-[100px]"
-        style={{ background: "var(--kafou-pink)" }}
-      />
-      <div
-        className="absolute left-1/3 top-1/3 h-[40vh] w-[40vw] rounded-full opacity-10 blur-[90px]"
-        style={{ background: "var(--kafou-pink-glow)" }}
-      />
-    </div>
-  );
-}
-
 function Hero() {
   return (
     <section className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
