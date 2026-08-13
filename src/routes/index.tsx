@@ -122,7 +122,7 @@ function Hero() {
       <div className="max-w-6xl space-y-10">
         <h1 className="flex flex-col items-center">
           <span
-            className="font-arabic ink-mark block text-[9rem] font-bold leading-[0.8] text-foreground lg:text-[16rem] xl:text-[20rem]"
+            className="font-arabic ink-mark block text-[10rem] font-bold leading-[0.85] text-foreground lg:text-[14rem]"
             lang="ar"
             dir="rtl"
           >
