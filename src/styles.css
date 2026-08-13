@@ -126,21 +126,13 @@
     0 0 6px color-mix(in oklab, var(--kafou-pink) 25%, transparent);
   mask-image:
     repeating-linear-gradient(
-      92deg,
-      black 0 3px,
-      transparent 3px 4px,
-      black 4px 9px,
-      color-mix(in oklab, black 55%, transparent) 9px 10px
-    ),
-    repeating-linear-gradient(
-      6deg,
-      black 0 5px,
-      color-mix(in oklab, black 40%, transparent) 5px 6px,
-      black 6px 13px,
-      transparent 13px 14px
+      88deg,
+      black 0 18px,
+      color-mix(in oklab, black 25%, transparent) 18px 22px,
+      black 22px 46px,
+      color-mix(in oklab, black 35%, transparent) 46px 49px
     );
-  mask-composite: intersect;
-  filter: contrast(1.15);
+  filter: contrast(1.1);
 }
 
 /* Arabic mark: hand-inked, slightly blotted */
@@ -149,11 +141,6 @@
     0 0 60px color-mix(in oklab, var(--kafou-pink) 55%, transparent),
     0 0 120px color-mix(in oklab, var(--kafou-pink) 35%, transparent),
     2px 3px 0 color-mix(in oklab, var(--kafou-ink) 60%, transparent);
-  mask-image: repeating-linear-gradient(
-    88deg,
-    black 0 7px,
-    color-mix(in oklab, black 78%, transparent) 7px 8px
-  );
 }
 
 @layer base {
