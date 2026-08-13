@@ -32,6 +32,7 @@ function Index() {
   return (
     <main className="relative min-h-screen overflow-x-hidden bg-background text-foreground">
       <SmokeLayer />
+      <TopNav />
       <Hero />
       <About />
       <Events />
@@ -65,7 +66,7 @@ function SmokeLayer() {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 py-24 text-center">
+    <section className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
       <div className="absolute inset-0 -z-10 mask-fade-bottom opacity-30">
         <div
           className="absolute inset-0"
@@ -76,31 +77,31 @@ function Hero() {
         />
       </div>
 
-      <div className="max-w-5xl space-y-8">
-        <div className="space-y-2">
-          <p
-            className="font-arabic text-3xl font-semibold text-primary/80 md:text-4xl"
-            aria-label="Kafou in Arabic"
+      <div className="max-w-6xl space-y-10">
+        <h1 className="flex flex-col items-center">
+          <span
+            className="font-arabic ink-mark block text-[9rem] font-bold leading-[0.8] text-foreground lg:text-[16rem] xl:text-[20rem]"
+            lang="ar"
+            dir="rtl"
           >
             كفو
-          </p>
-          <h1 className="text-6xl font-bold uppercase leading-[0.9] tracking-tight text-glow sm:text-7xl md:text-8xl lg:text-9xl">
-            KAFOU
-            <br />
-            COLECTIVO
-          </h1>
-        </div>
+          </span>
+          <span className="stencil-stamp mt-2 block text-2xl tracking-[0.5em] lg:text-4xl">
+            Collectivo
+          </span>
+          <span className="sr-only">Kafou Collectivo</span>
+        </h1>
 
-        <p className="mx-auto max-w-2xl text-lg font-medium uppercase tracking-wide text-primary sm:text-xl md:text-2xl">
+        <p className="mx-auto max-w-3xl text-2xl font-medium uppercase tracking-[0.2em] text-primary">
           Uplift without hesitation
         </p>
 
-        <p className="mx-auto max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+        <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
           A representative bridge between art, music, and cinema. A space for
           artists and musicians to be seen, supported, and connected.
         </p>
 
-        <div className="flex flex-col items-center gap-4 pt-4 sm:flex-row sm:justify-center">
+        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
           <a
             href="#events"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
