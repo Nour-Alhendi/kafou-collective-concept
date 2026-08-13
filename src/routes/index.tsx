@@ -108,7 +108,7 @@ function TopNav() {
 
 function Hero() {
   return (
-    <section className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
+    <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
       <div className="absolute inset-0 -z-10 mask-fade-bottom opacity-30">
         <div
           className="absolute inset-0"
