@@ -38,7 +38,7 @@ function Index() {
       <Events />
       <Artists />
       <Archive />
-      <Newsletter />
+      <StayKafou />
       <Footer />
     </main>
   );
@@ -411,10 +411,10 @@ function Events() {
                 </div>
               </div>
               <a
-                href="#newsletter"
+                href="#stay-kafou"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button shrink-0"
               >
-                Anmeldung
+                Sign up
               </a>
             </div>
           ))}
@@ -469,7 +469,7 @@ function Artists() {
                 <p className="text-sm text-muted-foreground">{artist.discipline}</p>
               </div>
               <a
-                href="#newsletter"
+                href="#stay-kafou"
                 className="inline-flex w-full items-center justify-center rounded-md border border-primary/40 bg-transparent px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground"
               >
                 Book workshop
@@ -588,7 +588,7 @@ function Footer() {
               <span className="font-arabic ink-mark text-6xl leading-none text-foreground" lang="ar" dir="rtl">
                 كفو
               </span>
-              <span className="stencil-stamp text-sm tracking-[0.4em] text-muted-foreground">
+              <span className="wordmark text-sm tracking-[0.4em] text-muted-foreground">
                 Collectivo
               </span>
             </div>
