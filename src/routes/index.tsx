@@ -79,7 +79,7 @@ function TopNav() {
           <span className="font-arabic text-3xl leading-none text-foreground" lang="ar" dir="rtl">
             كفو
           </span>
-          <span className="stencil-stamp text-xs tracking-[0.35em] text-muted-foreground">
+          <span className="wordmark text-xs tracking-[0.35em] text-muted-foreground">
             Collectivo
           </span>
         </a>
@@ -95,10 +95,10 @@ function TopNav() {
             </a>
           ))}
           <a
-            href="#newsletter"
+            href="#stay-kafou"
             className="rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:bg-primary/90 glow-button"
           >
-            Join
+            Stay Kafou
           </a>
         </nav>
       </div>
