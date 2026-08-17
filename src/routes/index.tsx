@@ -130,7 +130,7 @@ function Hero() {
           >
             كفو
           </span>
-          <span className="-mt-2 block w-full pl-[26%] text-left">
+          <span className="mt-6 block w-full pl-[38%] text-left">
             <span className="wordmark inline-block text-xl tracking-[0.42em] lg:text-2xl">
               Collectivo
             </span>
