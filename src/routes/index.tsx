@@ -38,7 +38,7 @@ function Index() {
       <Events />
       <Artists />
       <Archive />
-      <Newsletter />
+      <StayKafou />
       <Footer />
     </main>
   );
@@ -49,15 +49,15 @@ function SmokeLayer() {
     <div className="pointer-events-none fixed inset-0 -z-10">
       <div className="absolute inset-0 bg-smoke" />
       <div
-        className="absolute -left-1/4 top-0 h-[60vh] w-[60vw] rounded-full opacity-20 blur-[120px]"
+        className="absolute -left-1/4 top-0 h-[60vh] w-[60vw] rounded-full opacity-[0.07] blur-[160px]"
         style={{ background: "var(--kafou-pink)" }}
       />
       <div
-        className="absolute bottom-[10%] right-[-10%] h-[50vh] w-[50vw] rounded-full opacity-15 blur-[100px]"
+        className="absolute bottom-[10%] right-[-10%] h-[50vh] w-[50vw] rounded-full opacity-[0.05] blur-[150px]"
         style={{ background: "var(--kafou-pink)" }}
       />
       <div
-        className="absolute left-1/3 top-1/3 h-[40vh] w-[40vw] rounded-full opacity-10 blur-[90px]"
+        className="absolute left-1/3 top-1/3 h-[40vh] w-[40vw] rounded-full opacity-[0.04] blur-[140px]"
         style={{ background: "var(--kafou-pink-glow)" }}
       />
     </div>
@@ -79,7 +79,7 @@ function TopNav() {
           <span className="font-arabic text-3xl leading-none text-foreground" lang="ar" dir="rtl">
             كفو
           </span>
-          <span className="stencil-stamp text-xs tracking-[0.35em] text-muted-foreground">
+          <span className="wordmark text-xs tracking-[0.35em] text-muted-foreground">
             Collectivo
           </span>
         </a>
@@ -95,10 +95,10 @@ function TopNav() {
             </a>
           ))}
           <a
-            href="#newsletter"
+            href="#stay-kafou"
             className="rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-[0.2em] text-primary-foreground transition-all hover:bg-primary/90 glow-button"
           >
-            Join
+            Stay Kafou
           </a>
         </nav>
       </div>
@@ -107,14 +107,16 @@ function TopNav() {
 }
 
 function Hero() {
+  const [joinOpen, setJoinOpen] = useState(false);
+
   return (
     <section id="top" className="relative flex min-h-screen flex-col items-center justify-center px-10 py-32 text-center">
-      <div className="absolute inset-0 -z-10 mask-fade-bottom opacity-30">
+      <div className="absolute inset-0 -z-10 mask-fade-bottom opacity-40">
         <div
           className="absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse at 50% 40%, color-mix(in oklab, var(--kafou-pink) 25%, transparent) 0%, transparent 60%)",
+              "radial-gradient(ellipse at 50% 40%, color-mix(in oklab, var(--kafou-pink) 9%, transparent) 0%, transparent 65%)",
           }}
         />
       </div>
@@ -122,14 +124,16 @@ function Hero() {
       <div className="max-w-6xl space-y-10">
         <h1 className="flex flex-col items-center">
           <span
-            className="font-arabic ink-mark block text-[10rem] font-bold leading-[0.85] text-foreground lg:text-[14rem]"
+            className="font-arabic ink-mark block text-[13rem] font-bold leading-[0.8] text-foreground lg:text-[17rem]"
             lang="ar"
             dir="rtl"
           >
             كفو
           </span>
-          <span className="stencil-stamp mt-2 block text-2xl tracking-[0.5em] lg:text-4xl">
-            Collectivo
+          <span className="mt-6 block w-full pl-[38%] text-left">
+            <span className="wordmark inline-block text-xl tracking-[0.42em] lg:text-2xl">
+              Collectivo
+            </span>
           </span>
           <span className="sr-only">Kafou Collectivo</span>
         </h1>
@@ -143,21 +147,41 @@ function Hero() {
           artists and musicians to be seen, supported, and connected.
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <div className="flex flex-row items-start justify-center gap-4 pt-4">
           <a
             href="#events"
-            className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
           >
-            See upcoming events
+            Upcoming Events
           </a>
           <a
             href="#workshops"
-            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
           >
-            Book a workshop
+            Book a Workshop
           </a>
+          <button
+            type="button"
+            onClick={() => setJoinOpen(true)}
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+          >
+            Join Us
+          </button>
+          <div className="flex flex-col items-center gap-2">
+            <a
+              href="#stay-kafou"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
+            >
+              Stay Kafou
+            </a>
+            <span className="max-w-[15rem] text-xs leading-snug text-muted-foreground">
+              Get news, events &amp; drops before anyone else.
+            </span>
+          </div>
         </div>
       </div>
+
+      {joinOpen && <JoinDialog onClose={() => setJoinOpen(false)} />}
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
         <span className="sr-only">Scroll down</span>
@@ -176,6 +200,101 @@ function Hero() {
         </svg>
       </div>
     </section>
+  );
+}
+
+function JoinDialog({ onClose }: { onClose: () => void }) {
+  const [email, setEmail] = useState("");
+  const [offer, setOffer] = useState("");
+  const [sent, setSent] = useState(false);
+
+  return (
+    <div className="fixed inset-0 z-[60] flex items-center justify-center px-6">
+      <button
+        type="button"
+        aria-label="Close"
+        onClick={onClose}
+        className="absolute inset-0 bg-background/85 backdrop-blur-sm"
+      />
+      <div className="relative w-full max-w-xl rounded-xl border border-border bg-card p-10 text-left glow-border">
+        <p className="text-xs font-bold uppercase tracking-widest text-primary">
+          Join us
+        </p>
+        <h3 className="mt-3 text-3xl font-bold uppercase tracking-tight">
+          Get involved
+        </h3>
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          Tell us what you'd like to bring — hosting a workshop, collaborating,
+          showing work, or just being part of the collective.
+        </p>
+
+        {sent ? (
+          <p className="mt-8 text-sm font-bold uppercase tracking-wider text-primary">
+            Thanks — we'll be in touch.
+          </p>
+        ) : (
+          <form
+            className="mt-8 space-y-4"
+            onSubmit={(e) => {
+              e.preventDefault();
+              setSent(true);
+            }}
+          >
+            <div className="space-y-2">
+              <label
+                htmlFor="join-email"
+                className="block text-xs font-bold uppercase tracking-wider text-foreground"
+              >
+                Email <span className="text-primary">*</span>
+              </label>
+              <input
+                id="join-email"
+                type="email"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="your@email.com"
+                className="w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            <div className="space-y-2">
+              <label
+                htmlFor="join-offer"
+                className="block text-xs font-bold uppercase tracking-wider text-foreground"
+              >
+                What would you like to offer?{" "}
+                <span className="text-muted-foreground">(optional)</span>
+              </label>
+              <textarea
+                id="join-offer"
+                rows={4}
+                value={offer}
+                onChange={(e) => setOffer(e.target.value)}
+                placeholder="e.g. I'd like to host a workshop on analogue photography…"
+                className="w-full rounded-md border border-input bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+
+            <div className="flex items-center gap-3 pt-2">
+              <button
+                type="submit"
+                className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
+              >
+                Send
+              </button>
+              <button
+                type="button"
+                onClick={onClose}
+                className="text-xs font-bold uppercase tracking-wider text-muted-foreground hover:text-foreground"
+              >
+                Close
+              </button>
+            </div>
+          </form>
+        )}
+      </div>
+    </div>
   );
 }
 
@@ -292,10 +411,10 @@ function Events() {
                 </div>
               </div>
               <a
-                href="#newsletter"
+                href="#stay-kafou"
                 className="inline-flex items-center justify-center rounded-md bg-primary px-6 py-2.5 text-xs font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button shrink-0"
               >
-                Anmeldung
+                Sign up
               </a>
             </div>
           ))}
@@ -350,7 +469,7 @@ function Artists() {
                 <p className="text-sm text-muted-foreground">{artist.discipline}</p>
               </div>
               <a
-                href="#newsletter"
+                href="#stay-kafou"
                 className="inline-flex w-full items-center justify-center rounded-md border border-primary/40 bg-transparent px-4 py-2.5 text-xs font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground"
               >
                 Book workshop
@@ -412,21 +531,21 @@ function Archive() {
   );
 }
 
-function Newsletter() {
+function StayKafou() {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="newsletter" className="relative px-10 py-32">
+    <section id="stay-kafou" className="relative px-10 py-32">
       <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
         <div className="mb-8 space-y-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
-            Stay connected
+            Stay Kafou
           </p>
           <h2 className="text-4xl font-bold uppercase tracking-tight">
-            Join the collective
+            Stay Kafou
           </h2>
           <p className="text-muted-foreground">
-            Get updates on events, workshops, and open calls. No spam — just
+            Get news, events &amp; drops before anyone else. No spam — just
             creative power.
           </p>
         </div>
@@ -451,7 +570,7 @@ function Newsletter() {
             type="submit"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
           >
-            Subscribe
+            Stay Kafou
           </button>
         </form>
       </div>
@@ -469,7 +588,7 @@ function Footer() {
               <span className="font-arabic ink-mark text-6xl leading-none text-foreground" lang="ar" dir="rtl">
                 كفو
               </span>
-              <span className="stencil-stamp text-sm tracking-[0.4em] text-muted-foreground">
+              <span className="wordmark text-sm tracking-[0.4em] text-muted-foreground">
                 Collectivo
               </span>
             </div>
