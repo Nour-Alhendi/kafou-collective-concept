@@ -531,21 +531,21 @@ function Archive() {
   );
 }
 
-function Newsletter() {
+function StayKafou() {
   const [email, setEmail] = useState("");
 
   return (
-    <section id="newsletter" className="relative px-10 py-32">
+    <section id="stay-kafou" className="relative px-10 py-32">
       <div className="mx-auto max-w-4xl rounded-xl border border-border bg-card/40 p-8 glow-border md:p-12">
         <div className="mb-8 space-y-4 text-center">
           <p className="text-sm font-bold uppercase tracking-widest text-primary">
-            Stay connected
+            Stay Kafou
           </p>
           <h2 className="text-4xl font-bold uppercase tracking-tight">
-            Join the collective
+            Stay Kafou
           </h2>
           <p className="text-muted-foreground">
-            Get updates on events, workshops, and open calls. No spam — just
+            Get news, events &amp; drops before anyone else. No spam — just
             creative power.
           </p>
         </div>
@@ -570,7 +570,7 @@ function Newsletter() {
             type="submit"
             className="inline-flex items-center justify-center rounded-md bg-primary px-8 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
           >
-            Subscribe
+            Stay Kafou
           </button>
         </form>
       </div>
