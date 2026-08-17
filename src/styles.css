@@ -95,9 +95,9 @@
 
 @utility bg-smoke {
   background:
-    radial-gradient(ellipse at 20% 20%, color-mix(in oklab, var(--kafou-pink) 20%, transparent) 0%, transparent 50%),
-    radial-gradient(ellipse at 85% 75%, color-mix(in oklab, var(--kafou-pink) 14%, transparent) 0%, transparent 55%),
-    radial-gradient(ellipse at 50% 50%, color-mix(in oklab, var(--kafou-pink) 8%, transparent) 0%, transparent 70%),
+    radial-gradient(ellipse at 20% 15%, color-mix(in oklab, var(--kafou-pink) 7%, transparent) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 75%, color-mix(in oklab, var(--kafou-pink) 5%, transparent) 0%, transparent 60%),
+    radial-gradient(ellipse at 50% 50%, color-mix(in oklab, var(--kafou-pink) 3%, transparent) 0%, transparent 75%),
     var(--background);
 }
 
@@ -115,32 +115,19 @@
   mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
-/* Spray-paint stencil lockup: rough, stamped edges */
-@utility stencil-stamp {
-  font-family: var(--font-stencil);
+/* Latin wordmark: bold, blocky, controlled */
+@utility wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
   text-transform: uppercase;
   color: var(--foreground);
-  text-shadow:
-    0.5px 0 0 color-mix(in oklab, var(--kafou-pink) 45%, transparent),
-    -0.5px 0.5px 0 color-mix(in oklab, var(--background) 70%, transparent),
-    0 0 6px color-mix(in oklab, var(--kafou-pink) 25%, transparent);
-  mask-image:
-    repeating-linear-gradient(
-      88deg,
-      black 0 18px,
-      color-mix(in oklab, black 25%, transparent) 18px 22px,
-      black 22px 46px,
-      color-mix(in oklab, black 35%, transparent) 46px 49px
-    );
-  filter: contrast(1.1);
 }
 
-/* Arabic mark: hand-inked, slightly blotted */
+/* Arabic mark: inked with a faint pink bloom */
 @utility ink-mark {
   text-shadow:
-    0 0 60px color-mix(in oklab, var(--kafou-pink) 55%, transparent),
-    0 0 120px color-mix(in oklab, var(--kafou-pink) 35%, transparent),
-    2px 3px 0 color-mix(in oklab, var(--kafou-ink) 60%, transparent);
+    0 0 50px color-mix(in oklab, var(--kafou-pink) 20%, transparent),
+    0 0 110px color-mix(in oklab, var(--kafou-pink) 12%, transparent);
 }
 
 @layer base {
