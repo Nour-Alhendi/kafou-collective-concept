@@ -612,10 +612,10 @@ function Footer() {
         <div className="grid grid-cols-2 gap-16">
           <div className="space-y-6">
             <div className="flex items-baseline gap-3">
-              <span className="wordmark text-4xl tracking-[0.18em] text-foreground">
+              <span className="font-display text-4xl font-bold tracking-[0.12em] text-foreground">
                 Kafou
               </span>
-              <span className="wordmark text-sm tracking-[0.35em] text-muted-foreground">
+              <span className="font-display text-sm font-bold tracking-[0.35em] text-muted-foreground">
                 Collectivo
               </span>
             </div>
