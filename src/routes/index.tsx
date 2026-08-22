@@ -6,16 +6,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "KAFOU COLECTIVO — Uplift Without Hesitation",
+        title: "Kafou Collectivo — Uplift Without Hesitation",
       },
       {
         name: "description",
         content:
-          "KAFOU COLECTIVO is a multidisciplinary arts collective bridging art, music, and cinema. No gatekeeping, no competition — just pure creative power.",
+          "Kafou Collectivo is a multidisciplinary arts collective bridging art, music, and cinema. No gatekeeping, no competition — just pure creative power.",
       },
       {
         property: "og:title",
-        content: "KAFOU COLECTIVO — Uplift Without Hesitation",
+        content: "Kafou Collectivo — Uplift Without Hesitation",
       },
       {
         property: "og:description",
@@ -38,6 +38,7 @@ function Index() {
       <Events />
       <Artists />
       <Archive />
+      <Donate />
       <StayKafou />
       <Footer />
     </main>
@@ -75,12 +76,12 @@ function TopNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-10">
-        <a href="#top" className="flex items-baseline gap-3">
-          <span className="font-arabic text-3xl leading-none text-foreground" lang="ar" dir="rtl">
-            كفو
+        <a href="#top" className="flex items-baseline gap-2">
+          <span className="wordmark text-xl tracking-[0.18em] text-foreground">
+            KAFOU
           </span>
           <span className="wordmark text-xs tracking-[0.35em] text-muted-foreground">
-            Collectivo
+            COLLECTIVO
           </span>
         </a>
 
@@ -143,38 +144,39 @@ function Hero() {
         </p>
 
         <p className="mx-auto max-w-2xl text-lg leading-relaxed text-muted-foreground">
-          A representative bridge between art, music, and cinema. A space for
-          artists and musicians to be seen, supported, and connected.
+          Kafou Collectivo is a representative bridge between art, music, and
+          cinema. A space for artists and musicians to be seen, supported, and
+          connected.
         </p>
 
-        <div className="flex flex-row items-start justify-center gap-4 pt-4">
+        <div className="flex flex-row items-start justify-center gap-5 pt-4">
           <a
             href="#events"
-            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-10 py-5 text-base font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
           >
             Upcoming Events
           </a>
           <a
             href="#workshops"
-            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-10 py-5 text-base font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
           >
             Book a Workshop
           </a>
           <button
             type="button"
             onClick={() => setJoinOpen(true)}
-            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
+            className="inline-flex items-center justify-center rounded-md border border-primary/40 bg-transparent px-10 py-5 text-base font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary/10"
           >
             Join Us
           </button>
           <div className="flex flex-col items-center gap-2">
             <a
               href="#stay-kafou"
-              className="inline-flex items-center justify-center rounded-md bg-primary px-7 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
+              className="inline-flex items-center justify-center rounded-md bg-primary px-10 py-5 text-base font-bold uppercase tracking-wider text-primary-foreground transition-all hover:bg-primary/90 glow-button"
             >
               Stay Kafou
             </a>
-            <span className="max-w-[15rem] text-xs leading-snug text-muted-foreground">
+            <span className="max-w-[16rem] text-xs leading-snug text-muted-foreground">
               Get news, events &amp; drops before anyone else.
             </span>
           </div>
@@ -314,7 +316,7 @@ function About() {
         <div className="grid grid-cols-2 gap-20">
           <div className="space-y-6">
             <p className="text-sm font-bold uppercase tracking-widest text-primary">
-              What KAFOU means
+              What Kafou means
             </p>
             <h2 className="text-6xl font-bold uppercase leading-tight tracking-tight">
               Well done.
@@ -327,7 +329,7 @@ function About() {
 
           <div className="space-y-6 text-lg leading-relaxed text-muted-foreground">
             <p>
-              <span className="font-bold text-foreground">KAFOU</span> comes
+              <span className="font-bold text-foreground">Kafou</span> comes
               from Arabic — a word of recognition, of respect, of saying{" "}
               <em className="text-primary">you have what it takes</em>.
             </p>
@@ -531,6 +533,31 @@ function Archive() {
   );
 }
 
+function Donate() {
+  return (
+    <section className="relative px-10 py-24">
+      <div className="mx-auto max-w-4xl rounded-xl border border-primary/30 bg-card/40 p-12 text-center glow-border">
+        <p className="text-sm font-bold uppercase tracking-widest text-primary">
+          Support the mission
+        </p>
+        <h2 className="mt-4 text-4xl font-bold uppercase tracking-tight">
+          Be Kafou. Support Us.
+        </h2>
+        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+          Help us keep creating space for artists, musicians, and filmmakers.
+          Every contribution fuels workshops, events, and the collective.
+        </p>
+        <a
+          href="#"
+          className="mt-8 inline-flex items-center justify-center rounded-md border-2 border-primary bg-transparent px-12 py-5 text-lg font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground glow-button"
+        >
+          Be Kafou. Support Us.
+        </a>
+      </div>
+    </section>
+  );
+}
+
 function StayKafou() {
   const [email, setEmail] = useState("");
 
@@ -584,11 +611,11 @@ function Footer() {
       <div className="mx-auto max-w-7xl">
         <div className="grid grid-cols-2 gap-16">
           <div className="space-y-6">
-            <div className="flex items-baseline gap-4">
-              <span className="font-arabic ink-mark text-6xl leading-none text-foreground" lang="ar" dir="rtl">
-                كفو
+            <div className="flex items-baseline gap-3">
+              <span className="wordmark text-4xl tracking-[0.18em] text-foreground">
+                Kafou
               </span>
-              <span className="wordmark text-sm tracking-[0.4em] text-muted-foreground">
+              <span className="wordmark text-sm tracking-[0.35em] text-muted-foreground">
                 Collectivo
               </span>
             </div>
@@ -644,7 +671,7 @@ function Footer() {
         </div>
 
         <div className="mt-16 flex flex-row items-center justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} KAFOU COLLECTIVO. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kafou Collectivo. All rights reserved.</p>
           <p className="uppercase tracking-wider">Uplift without hesitation</p>
         </div>
       </div>
