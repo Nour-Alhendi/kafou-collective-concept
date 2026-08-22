@@ -37,8 +37,8 @@ function Index() {
       <About />
       <Events />
       <Artists />
+      <Support />
       <Archive />
-      <Donate />
       <StayKafou />
       <Footer />
     </main>
@@ -70,22 +70,23 @@ const navLinks = [
   { label: "Events", href: "#events" },
   { label: "Artists & Workshops", href: "#workshops" },
   { label: "Archive", href: "#archive" },
+  { label: "Support", href: "#support" },
 ];
 
 function TopNav() {
   return (
     <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur-md">
       <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-10">
-        <a href="#top" className="flex items-baseline gap-2">
-          <span className="wordmark text-xl tracking-[0.18em] text-foreground">
+        <a href="#top" className="flex shrink-0 flex-col leading-none">
+          <span className="wordmark text-sm tracking-[0.22em] text-foreground">
             KAFOU
           </span>
-          <span className="wordmark text-xs tracking-[0.35em] text-muted-foreground">
+          <span className="wordmark text-[0.6rem] tracking-[0.32em] text-muted-foreground">
             COLLECTIVO
           </span>
         </a>
 
-        <nav className="flex items-center gap-10">
+        <nav className="flex shrink-0 items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -484,6 +485,73 @@ function Artists() {
   );
 }
 
+const impactLines = [
+  { amount: "€10", label: "material for one workshop" },
+  { amount: "€50", label: "one artist paid for the night" },
+  { amount: "€100", label: "a full evening, free entry for everyone" },
+];
+
+function Support() {
+  return (
+    <section id="support" className="relative px-10 py-32">
+      <div className="mx-auto max-w-7xl">
+        <div className="relative overflow-hidden rounded-2xl border border-primary/20 bg-card/40 p-16 glow-border">
+          <div
+            className="pointer-events-none absolute -right-1/4 top-0 h-full w-1/2 opacity-40 blur-3xl"
+            style={{
+              background:
+                "linear-gradient(to left, color-mix(in oklab, var(--kafou-pink) 8%, transparent), transparent)",
+            }}
+          />
+
+          <div className="relative grid grid-cols-2 gap-16">
+            <div className="space-y-6">
+              <p className="text-sm font-bold uppercase tracking-widest text-primary">
+                Support the mission
+              </p>
+              <h2 className="text-5xl font-bold uppercase leading-tight tracking-tight">
+                Be Kafou.
+                <br />
+                Support Us.
+              </h2>
+              <p className="text-lg leading-relaxed text-muted-foreground">
+                No gatekeeping means no one gets turned away at the door. Your
+                support keeps it that way — it pays artists, rents the rooms,
+                and buys the material for every workshop.
+              </p>
+            </div>
+
+            <div className="flex flex-col justify-center space-y-10">
+              <div className="grid grid-cols-3 gap-4">
+                {impactLines.map((line) => (
+                  <div
+                    key={line.amount}
+                    className="space-y-2 rounded-md border border-border bg-background/50 p-5"
+                  >
+                    <p className="text-2xl font-bold text-primary">
+                      {line.amount}
+                    </p>
+                    <p className="text-xs font-bold uppercase leading-snug tracking-wider text-muted-foreground">
+                      {line.label}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <a
+                href="#"
+                className="inline-flex items-center justify-center self-start rounded-md border-2 border-primary bg-transparent px-12 py-5 text-lg font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground glow-button"
+              >
+                Support the Colectivo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const archiveItems = [
   { label: "Kafou Launch Night", year: "2024" },
   { label: "Cinema Under the Bridge", year: "2024" },
@@ -528,31 +596,6 @@ function Archive() {
             </div>
           ))}
         </div>
-      </div>
-    </section>
-  );
-}
-
-function Donate() {
-  return (
-    <section className="relative px-10 py-24">
-      <div className="mx-auto max-w-4xl rounded-xl border border-primary/30 bg-card/40 p-12 text-center glow-border">
-        <p className="text-sm font-bold uppercase tracking-widest text-primary">
-          Support the mission
-        </p>
-        <h2 className="mt-4 text-4xl font-bold uppercase tracking-tight">
-          Be Kafou. Support Us.
-        </h2>
-        <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
-          Help us keep creating space for artists, musicians, and filmmakers.
-          Every contribution fuels workshops, events, and the collective.
-        </p>
-        <a
-          href="#"
-          className="mt-8 inline-flex items-center justify-center rounded-md border-2 border-primary bg-transparent px-12 py-5 text-lg font-bold uppercase tracking-wider text-primary transition-all hover:bg-primary hover:text-primary-foreground glow-button"
-        >
-          Be Kafou. Support Us.
-        </a>
       </div>
     </section>
   );
